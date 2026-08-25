@@ -18,7 +18,7 @@ public class hw_01 {
 
         int choice = sc.nextInt();
 
-        switch (choice) {
+        switch(choice) {
             case 1:
                 area_of_triangle();
                 break;
