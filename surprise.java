@@ -1,24 +1,26 @@
-class Student {
-    int age;
+interface Father {
+    default void show() {
+        System.out.println("Father");
+    }
+}
 
-    
+interface Mother {
+    default void show() {
+        System.out.println("Mother");
+    }
+}
+
+class Child implements Father, Mother {
+    @Override
+    public void show() {
+        Father.super.show();
+        Mother.super.show();
+    }
 }
 
 public class surprise {
-    static void change(Student s) {
-       
-        s.age = 100;
-    }
-
     public static void main(String[] args) {
-
-        Student st = new Student();
-        st.age = 20;
-        
-
-        change(st);
-
-        System.out.println(st.age);
-       
+        Child c = new Child();
+        c.show();
     }
 }
